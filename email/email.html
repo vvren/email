@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="zh-CN" ng-app='myApp'>
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="css/mail.css">
+    <script type="text/javascript" src="js/angular.min.js"></script>
+    <script type="text/javascript" src="js/angular-ui-router.min.js"></script>
+    <script type="text/javascript" src="js/app.js"></script>
+</head>
+<body>
+    <header>
+        <div class="htop">
+            <div class="logo">
+                <img src="images/logo.gif">
+            </div>
+            <div class="title">
+                <p>不许嵩开
+                    <964532740@qq.com>
+                </p>
+                <p>邮件首页|设置-换肤</p>
+            </div>
+            <div class="logo-bd">
+                <span>反馈建议|帮助中心|退出</span>
+                <input type="text" placeholder="邮件查询....">
+            </div>
+        </div>
+    </header>
+    <div class="wrap">
+        <div class="wrap-1">
+            <ul>
+                <li><a ui-sref='write'>写信</a></li>
+                <li><a ui-sref='shou'>收信</a></li>
+                <li><a ui-sref='tong'>通信录</a></li>
+            </ul>
+        </div>
+        <div class="wrap-2">
+            <ul>
+                <li><a href="">收件箱(11)</a></li>
+                <li><a href="">星标邮件</a></li>
+                <li><a href="">群邮件(5)</a></li>
+                <li><a href="">草稿箱(1)</a></li>
+                <li><a href="">已发送(70)</a></li>
+                <li><a href="">已删除(2)</a></li>
+                <li><a href="">垃圾箱(3)</a></li>
+                <li><a href="">QQ邮件订阅</a></li>
+            </ul>
+        </div>
+        <div class="wrap-3">
+            <span>其他邮件(7)</span>
+        </div>
+        <div class="wrap-4">
+          <ul>
+            <li><a href="">漂流瓶（5）</a></li>
+            <li><a href="">贺卡|明信片</a></li>
+            <li><a href="">日历|笔记本</a></li>
+            <li><a href="">附件收藏</a></li>
+            <li><a href="">文件中转站</a></li>
+            <li><a href="">简历</a></li>
+            <li><a href="">阅读空间（81）</a></li>
+         
+          </ul>
+        </div>
+    </div>
+     
+    <div class="container" ui-view>
+       
+    </div>
+</body>
+
+</html>

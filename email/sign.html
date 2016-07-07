@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="zh-CN" ng-app='myApp'>
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript" src="js/angular.min.js"></script>
+	<style type="text/css">
+	 input.ng-invalid{
+	 	border: 1px solid red;
+		outline:none;
+	 }
+	 input.ng-dirty{
+			background-color: yellow;
+		}
+	</style>
+</head>
+<body ng-controller='formCtr'>
+	<form name="myForm" novalidate ng-submit='submit()'>
+	 <p>
+	 	<label>用户名</label>
+	 	<input type="text" name="uname" ng-model='user.name' 
+	 	 required
+	 	 ng-maxlength='10' 
+	 	 ng-minlength="3">
+	 	 <span ng-show='myForm.uname.$dirty && myForm.uname.$invalid'>
+	 	 	<span style="color: red;" ng-show='myForm.uname.$error.required'>用户必填</span>
+	 	 	 <span ng-show='myForm.uname.$error.maxlength'>用户名过长！</span>
+	 	 </span>
+	 </p> 
+	 <p>
+	 	<label>密码</label>
+	 	<input type="password" name="upwd" ng-model='user.upwd' 
+	 	  required 
+	 	  ng-minlength='6' 
+	 	  ng-maxlength='10'>
+	 </p>
+	 <p>
+	 	<input type="submit" value="登录"
+	 	ng-disabled='myForm.name.$invalid|| myForm.upwd.$invalid'>
+	 </p>
+	</form>
+	<script type="text/javascript">
+		var app=angular.module('myApp',[]);
+           app.controller('formCtr',function($scope){
+           	$scope.user={
+           		name:'jredu',
+           		upwd:'123'
+           	}
+           	$scope.submit=function(){
+           		alert($scope.user.name);
+
+           	}
+           })
+	</script>
+</body>
+</html>
